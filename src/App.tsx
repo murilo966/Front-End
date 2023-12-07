@@ -5,6 +5,7 @@ import Sobre from './pages/sobre';
 import NotFound from './pages/notfound';
 import State from './pages/state';
 import PaiFilho from './pages/pai_filho';
+import Lista from './pages/lista';
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
         <Route path='/state' element={<State/>} ></Route> 
         <Route path='/pai-filho' element={<PaiFilho/>} ></Route> 
         <Route path='/sobre/:parametro' element={<Sobre/>} ></Route> 
+        <Route path='/lista' element={<Lista/>} ></Route> 
+
       </Routes>
 
 

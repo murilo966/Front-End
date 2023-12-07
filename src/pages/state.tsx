@@ -18,7 +18,7 @@ function State() {
         <div className="darkMode">
             <Header/>
             <div className="content">
-                <div className="container-contador">
+                <div className="container">
                     <div className="container-resultado">
                         <label>Contador:
                             <br />

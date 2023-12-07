@@ -8,7 +8,8 @@ function Home(){
             <Header PgAtual={"Home"}/>
             <div className="content">
                 <div className='container'>
-                    <label>Home</label>
+                    <p>Essa é a página Home</p>
+                    <p>No momento não temos nenhum conteúdo nessa página!</p>
                 </div>
             </div>
             <Footer/>
