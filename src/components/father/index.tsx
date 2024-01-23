@@ -1,18 +1,24 @@
+import React from "react";
 import Filho from "../child";
+import { useState } from "react";
 
-function buttonEventAction(txt: String){
-    alert('EU SOU SEU PAI LUCK - ' + txt)
-}
 
-function buttonEventSave(){
-    alert(' NÃÃÃÃÃÃÃÃÃÃÃÃÃOOOOOOOOO, NÃÃÃÃÃÃÃÃÃÃÃÃÃOOOOOOOOO !!!')
-}
 
 function Pai(){
+    const [Texto, setTexto] = useState('');
+
+    function handleChangeText(event: React.ChangeEvent< HTMLInputElement >){
+        setTexto(event.target.value);
+    }
+    
+    function ExecutarMetodoPai(Texto:string) {
+        alert("Texto retornado" + Texto)
+    }
+    
     return(
         <div>
-            <Filho OnClickButtonFN={buttonEventAction}
-                OnClickButtonSave={buttonEventSave} />
+            <input type="text" placeholder="digite o texto passado" onChange={handleChangeText}/>
+            <Filho textoFilho={Texto} botaoComTexto={ExecutarMetodoPai}/>
         </div>
     )
 }

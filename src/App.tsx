@@ -6,6 +6,10 @@ import NotFound from './pages/notfound';
 import State from './pages/state';
 import PaiFilho from './pages/pai_filho';
 import Lista from './pages/lista';
+import AutoLista from './pages/autoLista';
+import Condicional from './pages/condicional';
+
+
 
 
 function App() {
@@ -18,6 +22,8 @@ function App() {
         <Route path='/pai-filho' element={<PaiFilho/>} ></Route> 
         <Route path='/sobre/:parametro' element={<Sobre/>} ></Route> 
         <Route path='/lista' element={<Lista/>} ></Route> 
+        <Route path='/autoLista'element={<AutoLista/>}></Route>
+        <Route path='/condicional' element={<Condicional/>} ></Route> 
 
       </Routes>
 

@@ -9,6 +9,8 @@ function Footer(){
         <Link to='/sobre/Renan'><p>sobre</p></Link>
         <Link to='/state'><p>state</p></Link>
         <Link to='/lista'><p>lista</p></Link>
+        <Link to='/autoLista'><p>autoLista</p></Link>
+        <Link to='/condicional'><p>Condicional</p></Link>
         </div>        
     )
 }

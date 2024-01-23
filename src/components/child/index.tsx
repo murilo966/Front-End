@@ -1,23 +1,21 @@
 type Props = {
-    OnClickButtonFN: (retorno: string) => void
-    OnClickButtonSave: () => void
+    botaoComTexto: (retorno: string) => void
+    textoFilho: string
+    
 }
 
-function Filho( Parametros: Props){
+function Filho(Param: Props){
 
-    function HandleClickButtonFN(){
-        Parametros.OnClickButtonFN('LUKE SKYWALKER DIZ - NÃÃÃÃÃÃÃÃÃÃÃÃÃOOOOOOOOO !!!! ')
+    function HandleClickButton1(){
+        Param.botaoComTexto(`essa mensagem foi enviada pelo filho: ${Param.textoFilho}`)
     }
 
     return(
         <div className="container-star-wars">
             <div className="bt-darth-vader">
-                <button onClick={(HandleClickButtonFN)}>DARTH VADER DIZ </button> 
-            </div>
-
-            <div className="bt-luke-skywalker">
-                <button onClick={(Parametros.OnClickButtonSave)}>LUKE DIZ !!!!</button> 
-            </div>            
+                <h1>{Param.textoFilho}</h1>
+                <button onClick={HandleClickButton1}>Botão filho</button> 
+            </div>       
         </div>
     )
 }

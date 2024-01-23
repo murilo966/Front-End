@@ -47,6 +47,35 @@ a{
 }
 
 /* Fim da lista */
+
+
+/* Início da lista de cadastro */
+.elemento td{
+  border: 2px rgb(0, 0, 0) solid;
+}
+
+.elemento{
+  text-align: center;
+}
+
+.listaCadastro{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.compUnicoProp{
+  margin: 0px;
+  padding: 0px;
+}
+
+.Título_autoLista{
+  margin-right: 30px;
+  margin-left: 30px;
+}
+/* Fim da lista de cadastro */
+
+
 .header{
   overflow: hidden;
   background-color: rgb(78, 31, 92);

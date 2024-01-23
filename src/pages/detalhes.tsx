@@ -1,6 +1,3 @@
-import Footer from "../components/footer"
-import Header from "../components/header"
-
 type Prop = {
     dados: {
         name: string;
