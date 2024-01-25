@@ -8,6 +8,7 @@ import PaiFilho from './pages/pai_filho';
 import Lista from './pages/lista';
 import AutoLista from './pages/autoLista';
 import Condicional from './pages/condicional';
+import Requisicoes from './pages/requisicoes';
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/lista' element={<Lista/>} ></Route> 
         <Route path='/autoLista'element={<AutoLista/>}></Route>
         <Route path='/condicional' element={<Condicional/>} ></Route> 
+        <Route path='/requisicao' element={<Requisicoes/>} ></Route> 
 
       </Routes>
 

@@ -3,6 +3,7 @@ import Header from "../components/header"
 import { useState } from "react";
 
 function Condicional(){
+    
     const [show, setShow] = useState(true);
 
     function HandleClickShow(){

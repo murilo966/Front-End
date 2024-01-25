@@ -32,7 +32,7 @@ function AutoLista(){
                                 <div className="elemento">
                                     {listaPessoas.map((item,index)=>(
                                         <tr key={index}>
-                                            <td>Nome {item.nome}</td> <td>- idade {item.idade}</td>
+                                            <td>nome {item.nome}</td> <td>- idade {item.idade}</td>
                                         </tr>
                                     ))}
                                 </div>
