@@ -1,11 +1,11 @@
-import { keyboard } from "@testing-library/user-event/dist/keyboard"
 import { useState } from "react"
 import Footer from "../components/footer"
 import Header from "../components/header"
+import { Produto } from "../Types/produtos"
 
 function Requisicoes(){
 
-    const [produtos, setProdutos] = useState([])
+    const [produtos, setProdutos] = useState<Produto[]>([]);
 
     const carregarProdutos = () => {
         fetch("https://fakestoreapi.com/products")
@@ -34,11 +34,11 @@ function Requisicoes(){
     }
 
     return(
-        <div className="darkMode">
+        <div className="darkModeRequisicoes">
             <Header PgAtual={"Requisicoes"}/>
                 <div className="content">
 
-                    <div className="container">
+                    <div className="containerRequisicoes">
 
 
                         <hr />
@@ -49,7 +49,22 @@ function Requisicoes(){
                         {produtos.map((item,index)=>(
                             <tr key={index}>
                                 <hr />
-                                <td><p>Total de produtos: {produtos.length}</p> {item[1]}</td>
+
+
+                                <table className="Produto">
+                                    <th>{item.title}</th> 
+                                    <tr>
+                                        <div className="ImagemProduto">
+                                            <img src={item.image}
+                                            width="20%" height="20%"/>
+                                        </div>
+                                    </tr> 
+                                    <tr>{item.description}</tr>
+                                    <tr>U$ {item.price}</tr>
+                                    <tr><button>COMPRAR</button></tr>
+                                </table>
+
+
                                 <hr />
                             </tr>
                         ))}
