@@ -8,7 +8,8 @@ import PaiFilho from './pages/pai_filho';
 import Lista from './pages/lista';
 import AutoLista from './pages/autoLista';
 import Condicional from './pages/condicional';
-import Requisicoes from './pages/requisicoes';
+import Requisicoes from './pages/requisicoesType';
+import RequisicoesAsync from './pages/requisicoesTypeAsync';
 
 
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/autoLista'element={<AutoLista/>}></Route>
         <Route path='/condicional' element={<Condicional/>} ></Route> 
         <Route path='/requisicao' element={<Requisicoes/>} ></Route> 
+        <Route path='/requisicaoAsync' element={<RequisicoesAsync/>} ></Route> 
 
       </Routes>
 
