@@ -23,7 +23,6 @@ a{
   display: flex;
   flex-direction: column;
   max-width: 90%;
-  padding-right: 1%;
   margin: 5% auto;
   
   background-color: rgba(172, 170, 170, 0.651);
@@ -86,7 +85,7 @@ a{
   padding: 20px 10px;
 }
 
-.footer{
+.footer {
 
   background-color: #333; 
   color: #fff; 
@@ -95,6 +94,7 @@ a{
   position: relative; 
   width: 100%; 
   bottom: 0;
+  text-decoration: none;
 }
 
 /* MENU */
@@ -296,5 +296,15 @@ a{
 }
 
 /* Final Requisições */
+
+
+
+/* Inicio das requisicoes post */
+
+.txtArea{
+  min-height: 336px;
+}
+
+/* Final das requisicoes post */
 
 
