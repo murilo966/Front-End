@@ -45,60 +45,57 @@ function RequisicoesAsync(){
 
     return(
         <div className="darkModeRequisicoes">
-            <Header PgAtual={"Requisicoes"}/>
+            <Header PgAtual={"RequisicoesAsync"}/>
                 <div className="content">
 
                     <div className="containerRequisicoes">
 
                         {loading &&
-                                <div>
-                                    Carregando conteúdo......
+                            <div>
+                                Carregando conteúdo......
 
-                                    <hr />
-                                </div>     
+                                <hr />
+                            </div>     
                                                    
-                            }
+                        }
 
                         {!loading &&
-                                <div>
-                                    <button onClick={carregarProdutos}>Carregar os produtos</button>
-                                        {produtos.map((item,index)=>(
-                                            <tr key={index}>
-                                                <hr />
+                            <div>
+                                <button onClick={carregarProdutos}>Carregar os produtos</button>
+                                {produtos.map((item,index)=>(
+                                    <tr key={index}>
+                                        <hr />
+                                        <table className="Produto">
+                                            <th>{item.title}</th> 
+                                            <tr>
+                                                <div className="ImagemProduto">
+                                                    <img src={item.image}
+                                                    width="20%" height="20%"/>
+                                                </div>
+                                            </tr> 
+                                            <tr>{item.description}</tr>
+                                            <tr>U$ {item.price}</tr>
+                                            <tr><button>COMPRAR</button></tr>
+                                        </table>
+                                        <hr />
+                                    </tr>
+                                ))}
+
+                                <hr />
+                                <br />
 
 
-                                                <table className="Produto">
-                                                    <th>{item.title}</th> 
-                                                    <tr>
-                                                        <div className="ImagemProduto">
-                                                            <img src={item.image}
-                                                            width="20%" height="20%"/>
-                                                        </div>
-                                                    </tr> 
-                                                    <tr>{item.description}</tr>
-                                                    <tr>U$ {item.price}</tr>
-                                                    <tr><button>COMPRAR</button></tr>
-                                                </table>
+                                <button onClick={mostrarCategorias}> Carregar categorias </button>
 
-                                                <hr />
-                                            </tr>
-                                        ))}
+                                    {categorias.map((itemC,index)=>(
+                                        <tr key={index}>                               
+                                            <td> {itemC}</td>                                
+                                        </tr>
+                                    ))}
+                                <hr />
+                            </div>
+                        }
 
-                                    <hr />
-                                    <br />
-
-
-                                    <button onClick={mostrarCategorias}> Carregar categorias </button>
-
-                                        {categorias.map((itemC,index)=>(
-                                            <tr key={index}>                               
-                                                <td> {itemC}</td>                                
-                                            </tr>
-                                        ))}
-                                    <hr />
-
-                                </div>
-                            }
                     </div>
 
                 </div>

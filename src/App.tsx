@@ -11,6 +11,7 @@ import Condicional from './pages/condicional';
 import Requisicoes from './pages/requisicoesType';
 import RequisicoesAsync from './pages/requisicoesTypeAsync';
 import RequisicoesPost from './pages/requisicoesPost';
+import RequisicoesPostRefact from './pages/requisicoesPostRefact';
 
 
 
@@ -30,6 +31,7 @@ function App() {
         <Route path='/requisicao' element={<Requisicoes/>} ></Route> 
         <Route path='/requisicaoAsync' element={<RequisicoesAsync/>} ></Route> 
         <Route path='/requisicoesPost' element={<RequisicoesPost/>} ></Route> 
+        <Route path='/RequisicoesPostRefact' element={<RequisicoesPostRefact/>} ></Route> 
 
       </Routes>
 
