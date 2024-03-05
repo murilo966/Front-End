@@ -33,6 +33,19 @@ export const api = {
 
             console.log(json)
             return json
+        },
+    
+        AdicionarcomArquivo: async (formData: FormData) => {
+            let response = await fetch('https://jsonplaceholder.typicode.com/posts',
+            {
+                method: "Post",
+                body: formData
+            }
+            );
+            let json = await response.json();
+
+            console.log(json)
+            return json
         }
     
 }

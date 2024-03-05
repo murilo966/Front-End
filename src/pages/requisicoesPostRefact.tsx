@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import { api } from "../api";
 import Footer from "../components/footer"
 import Header from "../components/header"
@@ -14,6 +14,44 @@ function RequisicoesPostRefact(){
     const[addBodyText, setAddBodyText] = useState('')
     const[usuarios, setUsuarios] = useState <Usuarios[]>([])
 
+
+    const fileInput = useRef<HTMLInputElement>(null)
+    const[legenda, setLegenda] = useState('')
+
+    const HandleLegendaChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setLegenda(e.target.value)
+    }
+
+    const handleAddPost = async () => {
+        if(fileInput.current?.files && fileInput.current.files.length > 0){
+            const fileItem = fileInput.current.files[0];
+            console.log(fileItem)
+            const tiposPermitidos = ['image/png','image/jpg','image/gif','image/jpeg']
+
+            if (tiposPermitidos.includes(fileItem.type)) {
+
+                const data = new FormData();
+                data.append('image', fileItem)
+                data.append('legenda', legenda)
+
+                    let json = await api.AdicionarcomArquivo(data);
+                    if (json.id) {
+                        alert('Post Adicionado com sucesso!')
+                        setUsuarios((usuarios) => [...usuarios, json])
+                    } else {
+                        alert('falha ao adicionar o usuario')
+                    }
+                
+            } 
+            else {
+                alert('Tipo do arquivo invalido')
+            }
+        } else {
+            alert('arquivo inexistente')
+        }
+    }
+
+
     function handleInputTitulo(e: React.ChangeEvent<HTMLInputElement>){
         setAddTitleText(e.target.value)
     }
@@ -21,6 +59,8 @@ function RequisicoesPostRefact(){
     function handleInputBody(e: React.ChangeEvent<HTMLTextAreaElement>){
         setAddBodyText(e.target.value)
     }
+
+    
     
 
 
@@ -102,6 +142,23 @@ function RequisicoesPostRefact(){
                             <hr />
                         </tr>
                     ))}
+
+                    <hr />
+                    <input placeholder="SELECIONE A IMAGEM"
+                    type="file"
+                    ref={fileInput}
+                    />
+                    <br />
+                    <input  placeholder="Informe uma descrição para sua imagem"
+                    type="text" 
+                    value={legenda}
+                    onChange={HandleLegendaChange}
+                    />
+                    <br />
+                    <button 
+                    onClick={handleAddPost}
+                    >Adicionar</button>
+
 
                 </div>
             </div>

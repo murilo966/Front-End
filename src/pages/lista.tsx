@@ -27,7 +27,7 @@ function Lista(){
                         <h2>Listas</h2>
 
                         <h3>Input de idades</h3>
-                        <ul className="listaDesordenada">
+                        <ul key="1" className="listaDesordenada">
                             {lista.map((item, index)=>(
                                 <li key={index}>
                                     <br />
@@ -38,9 +38,8 @@ function Lista(){
                         
                         <h3>Lista de usuários usando map</h3>
                         <ul className="listaDesordenada">
-                            {listaObj.map((item)=>(
-                                <li>
-
+                            {listaObj.map((item, index)=>(
+                                <li key={index}>
                                     <p>Nome: {item.name}</p>
                                     <p>Idade: {item.age}</p>
                                     <br /><br />
@@ -49,7 +48,7 @@ function Lista(){
                         </ul>
 
                         <h3>Lista de usuários usando comonente</h3>
-                        <ul className="listaDesordenada">
+                        <ul key="3" className="listaDesordenada">
                             {listaObj.map((item, index)=>(
                                 <Detalhes key={index} dados={item}/>))}
                         </ul>

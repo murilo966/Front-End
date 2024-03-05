@@ -12,6 +12,7 @@ import Requisicoes from './pages/requisicoesType';
 import RequisicoesAsync from './pages/requisicoesTypeAsync';
 import RequisicoesPost from './pages/requisicoesPost';
 import RequisicoesPostRefact from './pages/requisicoesPostRefact';
+import { UsuarioLogadoProvider } from './contexts/contextAuth';
 
 
 
@@ -19,21 +20,22 @@ import RequisicoesPostRefact from './pages/requisicoesPostRefact';
 function App() {
   return (
     <div>
-      <Routes>
-        <Route path='*' element={<NotFound/>} ></Route>
-        <Route path='/' element={<Home/>} ></Route> 
-        <Route path='/state' element={<State/>} ></Route> 
-        <Route path='/pai-filho' element={<PaiFilho/>} ></Route> 
-        <Route path='/sobre/:parametro' element={<Sobre/>} ></Route> 
-        <Route path='/lista' element={<Lista/>} ></Route> 
-        <Route path='/autoLista'element={<AutoLista/>}></Route>
-        <Route path='/condicional' element={<Condicional/>} ></Route> 
-        <Route path='/requisicao' element={<Requisicoes/>} ></Route> 
-        <Route path='/requisicaoAsync' element={<RequisicoesAsync/>} ></Route> 
-        <Route path='/requisicoesPost' element={<RequisicoesPost/>} ></Route> 
-        <Route path='/RequisicoesPostRefact' element={<RequisicoesPostRefact/>} ></Route> 
-
-      </Routes>
+      <UsuarioLogadoProvider>
+        <Routes>
+          <Route path='*' element={<NotFound/>} ></Route>
+          <Route path='/' element={<Home/>} ></Route>
+          <Route path='/state' element={<State/>} ></Route>
+          <Route path='/pai-filho' element={<PaiFilho/>} ></Route>
+          <Route path='/sobre/:parametro' element={<Sobre/>} ></Route>
+          <Route path='/lista' element={<Lista/>} ></Route>
+          <Route path='/autoLista'element={<AutoLista/>}></Route>
+          <Route path='/condicional' element={<Condicional/>} ></Route>
+          <Route path='/requisicao' element={<Requisicoes/>} ></Route>
+          <Route path='/requisicaoAsync' element={<RequisicoesAsync/>} ></Route>
+          <Route path='/requisicoesPost' element={<RequisicoesPost/>} ></Route>
+          <Route path='/RequisicoesPostRefact' element={<RequisicoesPostRefact/>} ></Route>
+        </Routes>
+      </UsuarioLogadoProvider>
 
 
       
